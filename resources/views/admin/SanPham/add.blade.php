@@ -42,7 +42,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="id_type">Danh mục</label>
-                                        <select class="form-control" style="width: 30%" name="id_type[]"
+                                        <select class="form-control" style="width: 30%" name="id_type"
                                             id="id_type">
                                             <option value="" disabled selected>--- Danh mục ---</option>
                                             @if (isset($danhmuc))
@@ -55,7 +55,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Tên </label>
-                                        <input class="form-control" id="name" name="name[]"
+                                        <input class="form-control" id="name" name="name"
                                             placeholder="Nhập tên sản phẩm...">
                                     </div>
 
@@ -63,24 +63,33 @@
                                     <div class="form-group">
                                         <label for="unit_price">Gía (VNĐ)</label>
                                         <input type="number" style="width: 30%" class="form-control" id="unit_price"
-                                            name="unit_price[]" placeholder="Nhập giá sản phẩm" value="0">
+                                            name="unit_price" placeholder="Nhập giá sản phẩm" value="0">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="promotion_price">Gía khuyến mại (VNĐ)</label>
                                         <input type="number" style="width: 30%" class="form-control" id="promotion_price"
-                                            name="promotion_price[]" placeholder="Nhập giá sản phẩm" value="0">
+                                            name="promotion_price" placeholder="Nhập giá sản phẩm" value="0">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group mb-3">
+                                            <div class="custom-file">
+                                                <label for="image">Hình ảnh sản phẩm</label>
+                                                <input type="file" class="custom-file-input" id="image" name="image">
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="new">new</label>
                                         <input type="number" style="width: 30%" class="form-control" id="new"
-                                            name="new[]" placeholder="Nhập giá sản phẩm" value="0">
+                                            name="new" placeholder="Nhập giá sản phẩm" value="0">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="description">Ghi chú</label>
-                                        <textarea class="form-control" id="description" name="description[]" placeholder=""
+                                        <textarea class="form-control" id="description" name="description" placeholder=""
                                             rows="5"></textarea>
                                     </div>
                                 </div>

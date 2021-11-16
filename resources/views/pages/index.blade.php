@@ -44,7 +44,7 @@
 			<div class="row">
 
                 @foreach ($new_product as $new)
-				<div class="col-sm-3">
+				<div class="col-sm-3" style="height: 450px">
 					<div class="single-item" >
 						<div class="single-item-header">
 							<a href=""><img src="images/product/{{ $new->image }}" height="300" width="270" alt=""></a>
@@ -80,7 +80,7 @@
 			<div class="row">
                 @foreach ($sale as $s)
 
-				<div class="col-sm-3">
+				<div class="col-sm-3" style="height: 450px">
 					<div class="single-item">
 						<div class="single-item-header">
 							<a href="product.html"><img src="images/product/{{ $s->image }}" height="300" width="270" alt=""></a>

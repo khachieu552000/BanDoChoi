@@ -44,17 +44,29 @@ class QLSanPhamController extends Controller
             'unit_price.*.min' => 'Đơn giá nhập lớn hơn 0!',
             'promotion_price.*.min' => 'Đơn giá bán lớn hơn 0!',
         ]);
-        $results = [];
-        for ($i=0; $i < count($request->name); $i++) {
+      
         $sp = new Product;
-            $sp->id_type = $request->id_type[$i];
-            $sp->name = $request->name[$i];
-            $sp->description = $request->description[$i];
-            $sp->unit_price = $request->unit_price[$i];
-            $sp->promotion_price = $request->promotion_price[$i];
-            $sp->new = $request->new[$i];
+            $sp->id_type = $request->id_type;
+            $sp->name = $request->name;
+            $sp->description = $request->description;
+            $sp->unit_price = $request->unit_price;
+            $sp->promotion_price = $request->promotion_price;
+            $sp->new = $request->new;
+        
+            if($request->hasFile("image")){
+            $file = $request->file('image');
+
+            $name = $file->getClientOriginalName();  //lấy tên hình đó ra
+            $hinh = Str::random(5) . "_" . Str::random(5) . "_" . $name;
+
+            while (file_exists("images/product/" . $hinh)) {
+                $hinh = Str::random(5) . "_" . Str::random(5) . "_" . $name;
+            }
+
+            $file->move("images/product", $hinh);
+            $sp->image = $hinh;
+            }
             $sp->save();
-        }
         return redirect()->back()->with('thongbao', 'Thêm mới thành công!');
     }
 
@@ -100,14 +112,14 @@ class QLSanPhamController extends Controller
         if ($request->hasFile('image')) {
             $file = $request->file('image');
 
-            $name = $file->getClientOriginalName();
+            $name = $file->getClientOriginalName();  //lấy tên hình đó ra
             $hinh = Str::random(5) . "_" . Str::random(5) . "_" . $name;
 
             while (file_exists("images/sanpham/" . $hinh)) {
                 $hinh = Str::random(5) . "_" . Str::random(5) . "_" . $name;
             }
 
-            $file->move( $hinh);
+            $file->move("images/product", $hinh);
             $sp->image = $hinh;
         }
 

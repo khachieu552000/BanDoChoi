@@ -43,7 +43,6 @@
                                     <th>Họ tên khách hàng</th>
                                     <th>Tổng tiền</th>
                                     <th>Ngày đặt</th>
-                                    <th>Trạng thái</th>
                                     <th>Chức năng</th>
                                 </tr>
                             </thead>
@@ -60,8 +59,8 @@
                                                 <td>{{ $item->customer->name }}</td>
                                                 <td>{{ $item->total }}</td>
                                                 <td>{{ date('d-m-Y', strtotime($item->date_order)) }}</td>
-                                                <td>Trạng thái</td>
-                                                <td>In hoá đơn</td>
+                                                <td><a class="btn btn-success btn-xs"
+                                                    href="{{ route('admin.hoadonxuat.in', ['id' => $item->id]) }}"><i class="fa fa-print"></i> In hoá đơn</a></td>
                                             </>
                                         @endif
                                     @endforeach

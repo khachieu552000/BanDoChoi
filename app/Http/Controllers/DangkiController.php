@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use Hash;
+use Illuminate\Support\Facades\Hash;
 use App\AccCustomer;
 
 class DangkiController extends Controller
@@ -19,7 +19,9 @@ class DangkiController extends Controller
                 'email'=>'required|email|unique:users,email',
                 'password'=>'required|min:6|max:20',
                 'name'=>'required',
-                're_password'=>'required|same:password'
+                're_password'=>'required|same:password',
+                'birthday'=>'required',
+                'address'=>'required'
             ],
             [
                 'email.required'=>'Vui lòng nhập email',
@@ -27,7 +29,10 @@ class DangkiController extends Controller
                 'email.unique'=>'Email đã có người sử dụng',
                 'password.required'=>'Vui lòng nhập mật khẩu',
                 're_password.same'=>'Mật khẩu không giống nhau',
-                'password.min'=>'Mật khẩu ít nhất 6 kí tự'
+                'password.min'=>'Mật khẩu ít nhất 6 kí tự',
+                'name.required'=>'Chưa nhập họ tên',
+                'birthday.required'=>'Chưa nhập ngày sinh',
+                'address.required'=>'Chưa nhập địa chỉ',
             ]);
             $user = new User;
             $user->role = 3;
@@ -38,6 +43,7 @@ class DangkiController extends Controller
             $acc = new AccCustomer;
             $acc->user_id = $user->id;
             $acc->name = $req->name;
+            $acc->birthday = $req->birthday;
             $acc ->address = $req->address;
             $acc ->phone_number = $req->phone;
             $acc ->save();

@@ -25,35 +25,41 @@
                     <div class="space20">&nbsp;</div>
 
 
-                    <div class="form-block">
-                        <label for="email">Email *</label>
+                    <div class="form-group">
+                        <label for="email">Email <span style="color: red">*</span></label>
                         <input class="form-control" type="email" name="email" placeholder="Nhập email" required>
                     </div>
 
-                    <div class="form-block">
-                        <label for="your_last_name">Họ tên*</label>
+                    <div class="form-group">
+                        <label for="your_last_name">Họ tên<span style="color: red">*</span></label>
                         <input class="form-control" type="text" name="name" placeholder="Nhập họ tên" required>
                     </div>
 
-                    <div class="form-block">
-                        <label for="adress">Địa chỉ*</label>
+                    <div class="form-group">
+                        <label for="birthday">Ngày sinh <span style="color: red">*</span></label>
+                        <input type="date" class="form-control" name="birthday" id="birthday" 
+                            placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adress">Địa chỉ<span style="color: red">*</span></label>
                         <input class="form-control" type="text" name="address" value="" placeholder="Nhập địa chỉ" required>
                     </div>
 
 
-                    <div class="form-block">
-                        <label for="phone">Điện thoại*</label>
+                    <div class="form-group">
+                        <label for="phone">Điện thoại<span style="color: red">*</span></label>
                         <input class="form-control" type="text" name="phone" placeholder="Nhập SĐT" required>
                     </div>
-                    <div class="form-block">
-                        <label for="password">Mật Khẩu*</label>
+                    <div class="form-group">
+                        <label for="password">Mật Khẩu<span style="color: red">*</span></label>
                         <input class="form-control" type="password" name="password" placeholder="Nhập mật khẩu"  required>
                     </div>
-                    <div class="form-block">
-                        <label for="re_password">Nhập lại mật khẩu*</label>
+                    <div class="form-group">
+                        <label for="re_password">Nhập lại mật khẩu<span style="color: red">*</span></label>
                         <input class="form-control" type="password" name="re_password" placeholder="Nhập lại mật khẩu" required>
                     </div>
-                    <div class="form-block">
+                    <div class="form-group">
                         <button type="submit" class="btn btn-primary">Đăng kí</button>
                     </div>
                 </div>

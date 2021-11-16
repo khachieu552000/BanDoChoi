@@ -7,7 +7,7 @@ use App\Customer;
 use App\Bill;
 use App\Cart;
 use App\BillDetail;
-use Session;
+use Illuminate\Support\Facades\Session;
 use Carbon\Carbon;
 use Mail;
 
@@ -48,18 +48,18 @@ class DathangController extends Controller
         }
 
         //send mail
-        $now = Carbon::now('Asia/Ho_Chi_Minh')->format('d-m-Y H:i:s');
-        $title = "Đơn hàng xác nhận ngày ". ' '.$now;
-        $customer = Customer::find(Session::get('id'));
-        $data['email'] = $request->get('email');
-        $data['name'] = $request->get('name');
+        // $now = Carbon::now('Asia/Ho_Chi_Minh')->format('d-m-Y H:i:s');
+        // $title = "Đơn hàng xác nhận ngày ". ' '.$now;
+        // $customer = Customer::find(Session::get('id'));
+        // $data['email'] = $request->get('email');
+        // $data['name'] = $request->get('name');
 
-        $bodys = array("name"=>$data['name']); //body of mail.blade.php
+        // $bodys = array("name"=>$data['name']); //body of mail.blade.php
 
-        Mail::send('pages.mail_order', $bodys, function ($message) use ($title, $data) {
-            $message->from($data['email'], 'UTT SHOP')->subject($title);
-            $message->to($data['email'], $title);
-        });
+        // Mail::send('pages.mail_order', $bodys, function ($message) use ($title, $data) {
+        //     $message->from($data['email'], 'UTT SHOP')->subject($title);
+        //     $message->to($data['email'], $title);
+        // });
 
 
 

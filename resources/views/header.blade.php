@@ -10,7 +10,7 @@
             <div class="pull-right auto-width-right">
                 <ul class="top-details menu-beta l-inline">
                     @if(Auth::check() && Auth::user()->role==3)
-
+                    <li><a href="">{{ Auth::user()->acc_customer->name }}</a></li>
                     <li><a href="{{ route('dangxuat') }}">Đăng xuất</a></li>
                     @else
                     <li><a href="{{ route('dangki') }}">Đăng kí</a></li>

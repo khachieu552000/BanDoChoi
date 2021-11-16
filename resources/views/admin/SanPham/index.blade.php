@@ -77,7 +77,7 @@
                                             </td>
 
                                             <td class="" style="">{{ number_format($item->unit_price) }} VNĐ</td>
-                                            <td class="" style="">{{ number_format($item->pomotion_price) }} VNĐ</td>
+                                            <td class="" style="">{{ number_format($item->promotion_price) }} VNĐ</td>
                                             <td class="" style="">{{ $item->new }}</td>
                                             <td class="center" style="text-align: center;">
                                                 <a class="btn btn-success btn-xs btn-edit"

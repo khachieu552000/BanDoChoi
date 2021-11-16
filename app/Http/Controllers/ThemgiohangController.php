@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Cart;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class ThemgiohangController extends Controller
 {

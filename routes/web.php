@@ -70,6 +70,7 @@ Route::get('dangxuat', ['uses'=>'DangxuatController@getDangxuat'])->name('dangxu
 
         Route::prefix('ds-hoa-don')->group(function () {
             Route::get('/', ['uses' => 'QLHoaDonController@index'])->name('admin.hoadonxuat.index');
+            Route::get('in/{id}', ['uses'=>'QLHoaDonController@print'])->name('admin.hoadonxuat.in');
 
         });
 

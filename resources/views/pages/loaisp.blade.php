@@ -40,7 +40,7 @@
 								<div class="col-sm-4">
 									<div class="single-item">
 										<div class="single-item-header">
-											<a href="product.html"><img src="../images/product/{{ $sp->image }}" height="300" width="270" alt=""></a>
+											<a href="#"><img src="../images/product/{{ $sp->image }}" height="300" width="270" alt=""></a>
 										</div>
 										<div class="single-item-body">
 											<p class="single-item-title">{{ $sp->name }}</p>
